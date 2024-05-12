@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportes J&J</title>
+    <style>
+        /* Estilos CSS básicos */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2E8B57; /* Verde oscuro */
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header img {
+            max-width: 30%;
+            height: auto;
+        }
+        nav {
+            background-color: #3CB371; /* Verde medio */
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background-color: #2E8B57;
+        }
+        section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            color: #2E8B57;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #2E8B57; /* Verde oscuro */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+        /* Estilos para el formulario de cotización */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        form input[type="text"],
+        form input[type="number"],
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        form input[type="submit"] {
+            background-color: #2E8B57;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form input[type="submit"]:hover {
+            background-color: #3CB371;
+        }
+        #mensajeCotizacion {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        /* Estilos para el recuadro de reseñas */
+        .reseñas {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .reseñas .formulario {
+            flex: 1 1 300px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .reseñas .reseñas-clientes {
+            flex: 1 1 300px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .reseñas .reseñas-clientes ul {
+            padding: 0;
+        }
+        .reseñas .reseñas-clientes ul li {
+            list-style: none;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .reseñas .reseñas-clientes ul li .calificacion {
+            color: #2E8B57;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .redes-sociales {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .redes-sociales a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #2E8B57;
+            color: #fff;
+            font-size: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        .redes-sociales a:hover {
+            background-color: #3CB371;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./LOGO JYJ (2).png" alt="Transportes de carga J&J">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#cotizadora">Cotizadora de carga</a></li>
+            <li><a href="#atencion">Atención al cliente</a></li>
+            <li><a href="#reseñas">Reseñas</a></li>
+            <li><a href="#flota">Conoce nuestra flota</a></li>
+            <li><a href="#informacion">Información de la empresa</a></li>
+        </ul>
+    </nav>
+
+    <section id="cotizadora">
+        <h2>Cotizadora de carga</h2>
+        <p>Estos precios son un valor aproximado. Por favor, contáctese a nuestro WhatsApp para una cotización precisa,tambien  para Cotizar
+        fletes minimos .</p>
+        <!-- Aquí va el formulario de cotización -->
+        <form action="#" method="post" id="formCotizacion">
+            <label for="origen">Origen:</label>
+            <input type="text" id="origen" name="origen" value="Bogotá">
+            <label for="
+
+destino">Destino:</label>
+            <select id="destino" name="destino">
+                <option value="Cartagena">Cartagena</option>
+                <option value="Barranquilla">Barranquilla</option>
+                <option value="Santa marta">Santa Marta</option>
+                <option value="Valledupar">Valledupar</option>
+                <option value="Monteria">Montería</option>
+                <option value="Medellin">Medellín</option>
+                <option value="Cali">Cali</option>
+                <option value="Bucaramanga">Bucaramanga</option>
+                <option value="Pereira">Pereira</option>
+                <option value="Manizales">Manizales</option>
+                <option value="Armenia">Armenia</option>
+                <option value="Yopal">Yopal</option>
+                <option value="Villavicencio">Villavicencio</option>
+                <option value="Florencia">Florencia</option>
+                <option value="Neiva">Neiva</option>
+                <option value="Ibague">Ibagué</option>
+                <option value="Pasto">Pasto</option>
+                <option value="Ipiales">Ipiales</option>
+                <option value="Cucuta">Cúcuta</option>
+                <option value="Quibdo">Quibdó</option>
+                <option value="Facatativa">Facatativá</option>
+                <option value="Zipaquira">Zipaquirá</option>
+                <option value="Girardot">Girardot</option>
+                <option value="Melgar">Melgar</option>
+                <option value="Bogota">Bogotá</option>
+            </select>
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" name="peso">
+            <label for="llanta">Tipo de llanta:</label>
+            <select id="llanta" name="llanta">
+                <option value="sencilla">Llanta simple</option>
+                <option value="doble">Turbo doble llanta</option>
+            </select>
+            <label for="precio_estimado">Precio estimado:</label>
+            <input type="text" id="precio_estimado" name="precio_estimado" readonly>
+            <input type="submit" value="Calcular cotización">
+        </form>
+        <p id="mensajeCotizacion"></p>
+    </section>
+
+    <section id="atencion">
+        <h2>Atención al cliente</h2>
+        <p>Para cualquier consulta o solicitud de información, por favor contáctenos:</p>
+        <p>Teléfono: 3222409230</p>
+        <p>Email: mudanzasjyj01@gmail.com</p>
+        <p>Contáctenos también a través de:</p>
+        
+        <p class="redes-sociales">
+            <a href="https://wa.me/573222409230" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp--v5.png" alt="WhatsApp"></a>
+            <a href="https://www.facebook.com/profile.php?id=100087554124513&locale=es_LA" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+            <a href="https://www.tiktok.com/@transportesjj" target="_blank"><img src="https://img.icons8.com/color/48/000000/tiktok--v1.png" alt="TikTok"></a>
+        </p>
+    </section>
+
+    <section id="reseñas">
+        <h2>Reseñas</h2>
+        <!-- Aquí va el recuadro de reseñas -->
+        <div class="reseñas">
+            <div class="formulario">
+                <h3>Deja tu reseña</h3>
+                <form action="#" method="post" id="formResena">
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre"><br><br>
+                    <label for="resena">Reseña:</label><br>
+                    <textarea id="resena" name="resena" rows="4" cols="50"></textarea><br><br>
+                    <label for="calificacion">Calificación:</label><br>
+                    <select id="calificacion" name="calificacion">
+                        <option value="5">5 estrellas</option>
+                        <option value="4">4 estrellas</option>
+                        <option value="3">3 estrellas</option>
+                        <option value="2">2 estrellas</option>
+                        <option value="1">1 estrella</option>
+                    </select><br><br>
+                    <input type="submit" value="Enviar reseña">
+                </form>
+            </div>
+            <div class="reseñas-clientes">
+                <h3>Reseñas de clientes</h3>
+                <ul id="listaResenas">
+                    <li><span class="calificacion">★★★★★</span> carlos: Excelente servicio, muy puntuales.</li>
+                    <li><span class="calificacion">★★★★☆</span> lucia : Buenos precios y atención al cliente.</li>
+                    <li><span class="calificacion">★★★★★</span> nestor: Recomiendo ampliamente.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="flota">
+        <h2>Conoce nuestra flota</h2>
+        <p>Aquí podrás encontrar información sobre nuestra flota de vehículos.</p>
+        <a href="https://www.facebook.com/profile.php?id=100087554124513&locale=es_LA">Ver flota</a>
+    </section>
+
+    <section id="informacion">
+        <h2>Información de la empresa</h2>
+        <p>Transportes de carga y mudanzas J&J es una empresa líder en el transporte de carga a nivel nacional.</p>
+        <p>Contamos con una amplia flota de vehículos y un equipo de profesionales altamente calificados  Honestidad y Responsablidad .</p>
+        <p>¡Confía en nosotros para tus envíos!</p>
+    </section>
+
+    <footer>
+        <p>Derechos de autor &copy; 2024 Transportes de carga J&J</p>
+    </footer>
+
+    <script>
+        document.getElementById("formCotizacion").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var origen = document.getElementById("origen").value.trim();
+            var destino = document.getElementById("destino").value.trim();
+            var peso = parseInt(document.getElementById("peso").value.trim());
+            var llanta = document.getElementById("llanta").value.trim();
+            var precio_estimado = document.getElementById("precio_estimado");
+            var precio;
+
+            switch (destino) {
+                case "Cartagena":
+                case "Barranquilla":
+                    if (llanta === "sencilla") {
+                        precio = 2400000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                case "Santa marta":
+                    if (llanta === "sencilla") {
+                        precio = 2300000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                case "Valledupar":
+
+
+                case "Monteria":
+                    if (llanta === "sencilla") {
+                        precio = 2200000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                // Agrega más destinos y precios aquí
+                default:
+                case "Medellin":
+                    if (llanta === "sencilla") {
+                        precio = 1300000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Cali":
+                    if (llanta === "sencilla") {
+                        precio = 1400000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Bucaramanga":
+                    if (llanta === "sencilla") {
+                        precio = 1300000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Pereira":
+                    if (llanta === "sencilla") {
+                        precio = 1300000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Armenia":
+
+                    case "Manizales":
+                    if (llanta === "sencilla") {
+                        precio = 1300000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Yopal":
+                    if (llanta === "sencilla") {
+                        precio = 1300000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Villavicencio":
+                    if (llanta === "sencilla") {
+                        precio = 950000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Florencia":
+                    if (llanta === "sencilla") {
+                        precio = 2100000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Neiva":
+                    if (llanta === "sencilla") {
+                        precio = 1350000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Ibague":
+                    if (llanta === "sencilla") {
+                        precio = 1000000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Pasto":
+                    if (llanta === "sencilla") {
+                        precio = 2500000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Ipiales":
+                    if (llanta === "sencilla") {
+                        precio = 3500000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Cucuta":
+                    if (llanta === "sencilla") {
+                        precio = 2100000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Quibdo":
+                    if (llanta === "sencilla") {
+                        precio = 2400000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Zipaquira":
+
+                    case "Facatativa":
+                    if (llanta === "sencilla") {
+                        precio = 450000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Melgar":
+
+                    case "Girardot":
+                    if (llanta === "sencilla") {
+                        precio = 450000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+                    case "Bogota":
+                    if (llanta === "sencilla") {
+                        precio = 350000;
+                    } else {
+                        alert("Escríbenos a nuestro WhatsApp para tu cotización.");
+                        return;
+                    }
+                    break;
+
+                    
+                    
+                    
+                    
+                    
+            }
+
+            var envio = {
+                origen: origen,
+                destino: destino,
+                peso: peso,
+                llanta: llanta,
+                precio: precio
+            };
+
+            precio_estimado.value = envio.precio.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
+            document.getElementById("mensajeCotizacion").innerHTML = "La cotización para el envío desde " + envio.origen + " hasta " + envio.destino + " con un peso de " + envio.peso + " kg y llanta " + envio.llanta + " es de " + precio_estimado.value + ".";
+        });
+
+        document.getElementById("formResena").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var nombre = document.getElementById("nombre").value.trim();
+            var resena = document.getElementById("resena").value.trim();
+            var calificacion = document.getElementById("calificacion").value.trim();
+            if (nombre === "" || resena === "" || calificacion === "") {
+                alert("Por favor, complete todos los campos.");
+                return;
+            }
+
+            var listaResenas = document.getElementById("listaResenas");
+            var calificacionHTML = '';
+            for (var i = 0; i < calificacion; i++) {
+                calificacionHTML += '★';
+            }
+            for (var i = calificacion; i < 5; i++) {
+                calificacionHTML += '☆';
+            }
+            var nuevaResena = document.createElement("li");
+            nuevaResena.innerHTML = '<span class="calificacion">' + calificacionHTML + '</span> ' + nombre + ': ' + resena;
+            listaResenas.appendChild(nuevaResena);
+
+            document.getElementById("nombre").value = "";
+            document
+
+.getElementById("resena").value = "";
+            document.getElementById("calificacion").value = "5";
+        });
+    </script>
+</body>
+</html>
